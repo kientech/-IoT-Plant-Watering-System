@@ -1,7 +1,3 @@
-Here's a detailed `README.md` for the "Automatic Plant Watering System" project. This guide will help users understand the project concept, set up the environment, and deploy both the hardware and software components effectively.
-
----
-
 # Automatic Plant Watering System 🌿
 
 This project builds a smart plant watering system that automatically maintains soil moisture at optimal levels without manual intervention. Using a soil moisture sensor and a motor controlled via relay, the system automatically turns on the motor to water plants when the soil moisture drops below a set threshold. Users can also control the motor manually through a web interface.
