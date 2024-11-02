@@ -3,9 +3,9 @@
 
 using namespace websockets;
 
-const char* ssid = "TrungKien";         
-const char* password = "trungkien"; 
-const char* websocket_server = "192.168.100.170";  
+const char* ssid = "your_SSID";         
+const char* password = "your_PASSWORD"; 
+const char* websocket_server = "your_SERVER_IP";  
 const int websocket_port = 5000;
 
 WebsocketsClient webSocket;
@@ -32,7 +32,7 @@ void setup() {
 
     webSocket.onMessage([](WebsocketsMessage message) {
         String data = message.data();
-        Serial.println("Nhận được tin nhắn: " + data);
+        Serial.println("Received message: " + data);
 
         if (data == "{\"type\":\"motorControl\",\"state\":\"MOTOR_ON\"}") {
             motorState = true; 
@@ -62,17 +62,17 @@ void loop() {
     if (webSocket.available()) {
         webSocket.poll();
     } else {
-        Serial.println("Mất kết nối WebSocket. Đang kết nối lại...");
+        Serial.println("WebSocket disconnected. Reconnecting...");
         connectWebSocket();
     }
 }
 
 void connectWebSocket() {
-    Serial.println("Đang kết nối WebSocket...");
+    Serial.println("Connecting to WebSocket...");
     if (webSocket.connect(websocket_server, websocket_port, "/")) {
-        Serial.println("Đã kết nối WebSocket thành công!");
+        Serial.println("WebSocket connection successful!");
     } else {
-        Serial.println("Kết nối WebSocket thất bại. Thử lại...");
+        Serial.println("WebSocket connection failed. Retrying...");
         delay(2000); 
         connectWebSocket();  
     }
