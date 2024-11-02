@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px 10px 0 0;
+}
+
+.main-content {
+  padding: 2rem;
+}
+
+.status-container {
+  display: flex;
+  justify-content: space-around;
+  
+  margin-bottom: 2rem;
+}
+
+.status-item {
+  text-align: center;
+}
+
+.humidity-display {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-top: 0.5rem;
+}
+
+.motor-state {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.motor-state.on {
+  color: #ffffff;
+  background-color: #4caf50;
+}
+
+.motor-state.off {
+  color: #ffffff;
+  background-color: #f44336;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.control-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.control-button.on-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.control-button.on-button:hover {
+  background-color: #45a049;
+}
+
+.control-button.off-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.control-button.off-button:hover {
+  background-color: #e53935;
+}
